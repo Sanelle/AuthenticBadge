@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication Verification Platform</title>
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fs-4 fw-bold" href="#">
+        <i class="fa-solid fa-shield-check me-2"></i>AuthenticVerify
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#verify">Verify Business</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">How It Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <button id="darkModeToggle" class="btn btn-dark ms-3">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero bg-gradient-primary text-white py-5">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown">
+            Build Trust with Digital Verification
+          </h1>
+          <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">
+            Empower your business with instant credibility and give your customers peace of mind
+          </p>
+          <a href="#verify" class="btn btn-light btn-lg px-5 py-3 rounded-pill shadow animate__animated animate__bounceIn animate__delay-2s">
+            Verify Now <i class="fa-solid fa-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verification Section -->
+  <section id="verify" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-lg">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-4 fw-bold">Verify Business Authenticity</h2>
+              <div class="input-group">
+                <input type="text" id="uin-input" class="form-control form-control-lg" 
+                       placeholder="Enter Business Verification ID">
+                <button class="btn btn-success btn-lg px-4" id="verify-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+              <div id="result" class="mt-4"></div>
+              <div id="loader" class="text-center mt-4" style="display: none;">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">How It Works</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="text-center mb-4">
+                <i class="fa-solid fa-building fa-3x text-primary"></i>
+              </div>
+              <h5 class="fw-bold mb-3">For Businesses</h5>
+              <p class="text-muted">Obtain your unique verification ID and display our trust badge to enhance your 
+              credibility and customer confidence.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="text-center mb-4">
+                <i class="fa-solid fa-users fa-3x text-success"></i>
+              </div>
+              <h5 class="fw-bold mb-3">For Customers</h5>
+              <p class="text-muted">Instantly verify business authenticity before transactions. Get detailed 
+              verification reports in seconds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-4 fw-bold">Contact Us</h2>
+              <form id="contact-form">
+                <div class="mb-4">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control form-control-lg" required>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-control form-control-lg" required>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control form-control-lg" rows="4" required></textarea>
+                </div>
+                <button class="btn btn-primary btn-lg w-100">
+                  Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2024 AuthenticVerify. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <div class="social-links">
+            <a href="#" class="text-white me-3"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
