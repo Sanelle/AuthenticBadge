@@ -1,0 +1,93 @@
+/* styles.css */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --dark-bg: #0f172a;
+  --light-bg: #f8fafc;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--light-bg);
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+body[data-bs-theme="dark"] {
+  background-color: var(--dark-bg);
+  color: #f8fafc;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--primary-color) !important;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 6rem 0;
+}
+
+/* Verification Section */
+#verify .card {
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+#verify .card:hover {
+  transform: translateY(-5px);
+}
+
+#result {
+  display: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+#result.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+#result.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Contact Section */
+#contact .card {
+  border-radius: 1rem;
+}
+
+/* Loader Animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner-border {
+  animation: spin 0.75s linear infinite;
+}
+
+/* Dark Mode Adjustments */
+body[data-bs-theme="dark"] #result.success {
+  background: #14532d;
+  color: #bbf7d0;
+}
+
+body[data-bs-theme="dark"] #result.error {
+  background: #7f1d1d;
+  color: #fecaca;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+}
